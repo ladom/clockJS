@@ -1,0 +1,32 @@
+.demo
+	box-sizing: border-box
+	width: 4px
+	height: 294px
+	border-top: 20px solid #bf9b30
+	border-bottom: 20px solid #bf9b30
+	position: absolute
+	top: 3px
+	left: 148px
+
+	&::before
+		content: ""
+		display: block
+		@extend .demo
+		transform: rotate(-30deg)
+		border-top: 10px solid #bf9b30
+		border-bottom: 10px solid #bf9b30
+		top: -20px
+		left: 0
+
+	&::after
+		content: ""
+		display: block
+		@extend .demo
+		transform: rotate(30deg)
+		border-top: 10px solid #bf9b30
+		border-bottom: 10px solid #bf9b30
+		top: -20px
+		left: 0
+	
+
+	

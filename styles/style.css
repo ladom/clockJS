@@ -5,7 +5,7 @@
   .container .clock-face {
     width: 300px;
     height: 300px;
-    border: 4px solid #888;
+    border: 4px solid #a67c00;
     border-radius: 50%;
     position: relative;
     background-color: #ccc;
@@ -30,10 +30,10 @@
         border-bottom-right-radius: 5px; }
     .container .clock-face .second-hand {
       height: 135px;
-      background-color: #888;
+      background-color: #a67c00;
       top: 15px; }
       .container .clock-face .second-hand .top-second-hand {
-        border-bottom: 12px solid #888; }
+        border-bottom: 12px solid #a67c00; }
       .container .clock-face .second-hand .second-ring-central {
         width: 20px;
         height: 20px;
@@ -41,19 +41,19 @@
         position: absolute;
         bottom: -14px;
         left: -12px;
-        border: 4px outset #888; }
+        border: 4px outset #a67c00; }
     .container .clock-face .minute-hand {
       height: 125px;
-      background-color: #777;
+      background-color: #a67c10;
       top: 25px; }
       .container .clock-face .minute-hand .top-minute-hand {
-        border-bottom: 18px solid #777; }
+        border-bottom: 18px solid #a67c10; }
     .container .clock-face .hour-hand {
       height: 100px;
-      background-color: #666;
+      background-color: #a67c20;
       top: 50px; }
       .container .clock-face .hour-hand .top-hour-hand {
-        border-bottom: 24px solid #666; }
+        border-bottom: 24px solid #a67c20; }
       .container .clock-face .hour-hand .ring-central {
         width: 12px;
         height: 12px;
@@ -61,79 +61,70 @@
         position: absolute;
         bottom: -6px;
         left: -4px;
-        background-color: #666; }
-    .container .clock-face .vertical-hours, .container .clock-face .vertical-hours-before, .container .clock-face .vertical-hours-after {
+        background-color: #a67c20; }
+    .container .clock-face .vertical-hours, .container .clock-face .vertical-hours::before, .container .clock-face .vertical-hours::after {
+      box-sizing: border-box;
       width: 4px;
-      height: 300px;
+      height: 294px;
+      border-top: 20px solid #bf9b30;
+      border-bottom: 20px solid #bf9b30;
       position: absolute;
-      top: 0;
+      top: 3px;
       left: 148px; }
-      .container .clock-face .vertical-hours .top-hour, .container .clock-face .vertical-hours-before .top-hour, .container .clock-face .vertical-hours-after .top-hour, .container .clock-face .vertical-hours-before .top-hour-before, .container .clock-face .vertical-hours-after .top-hour-after {
-        width: 4px;
-        height: 20px;
-        position: absolute;
-        top: 3px;
-        background-color: #eee; }
-      .container .clock-face .vertical-hours .bottom-hour, .container .clock-face .vertical-hours-before .bottom-hour, .container .clock-face .vertical-hours-after .bottom-hour, .container .clock-face .vertical-hours-before .bottom-hour-before, .container .clock-face .vertical-hours-after .bottom-hour-after {
-        width: 4px;
-        height: 20px;
-        position: absolute;
-        bottom: 3px;
-        background-color: #eee; }
-    .container .clock-face .vertical-hours-before {
-      transform: rotate(-30deg); }
-      .container .clock-face .vertical-hours-before .top-hour-before {
-        height: 10px; }
-      .container .clock-face .vertical-hours-before .bottom-hour-before {
-        height: 10px; }
-    .container .clock-face .vertical-hours-after {
-      transform: rotate(30deg); }
-      .container .clock-face .vertical-hours-after .top-hour-after {
-        height: 10px; }
-      .container .clock-face .vertical-hours-after .bottom-hour-after {
-        height: 10px; }
-    .container .clock-face .horizontal-hours, .container .clock-face .horizontal-hours-before, .container .clock-face .horizontal-hours-after {
-      width: 300px;
+      .container .clock-face .vertical-hours::before {
+        content: "";
+        display: block;
+        transform: rotate(-30deg);
+        border-top: 10px solid #bf9b30;
+        border-bottom: 10px solid #bf9b30;
+        top: -20px;
+        left: 0; }
+      .container .clock-face .vertical-hours::after {
+        content: "";
+        display: block;
+        transform: rotate(30deg);
+        border-top: 10px solid #bf9b30;
+        border-bottom: 10px solid #bf9b30;
+        top: -20px;
+        left: 0; }
+    .container .clock-face .horizontal-hours, .container .clock-face .horizontal-hours::before, .container .clock-face .horizontal-hours::after {
+      box-sizing: border-box;
+      width: 294px;
       height: 4px;
+      border-left: 20px solid #bf9b30;
+      border-right: 20px solid #bf9b30;
       position: absolute;
       top: 148px;
-      left: 0px; }
-      .container .clock-face .horizontal-hours .left-hour, .container .clock-face .horizontal-hours-before .left-hour, .container .clock-face .horizontal-hours-after .left-hour, .container .clock-face .horizontal-hours-before .left-hour-before, .container .clock-face .horizontal-hours-after .left-hour-after {
-        width: 20px;
-        height: 4px;
-        position: absolute;
-        left: 3px;
-        background-color: #eee; }
-      .container .clock-face .horizontal-hours .right-hour, .container .clock-face .horizontal-hours-before .right-hour, .container .clock-face .horizontal-hours-after .right-hour, .container .clock-face .horizontal-hours-before .right-hour-before, .container .clock-face .horizontal-hours-after .right-hour-after {
-        width: 20px;
-        height: 4px;
-        position: absolute;
-        right: 3px;
-        background-color: #eee; }
-    .container .clock-face .horizontal-hours-before {
-      transform: rotate(-30deg); }
-      .container .clock-face .horizontal-hours-before .left-hour-before {
-        width: 10px; }
-      .container .clock-face .horizontal-hours-before .right-hour-before {
-        width: 10px; }
-    .container .clock-face .horizontal-hours-after {
-      transform: rotate(30deg); }
-      .container .clock-face .horizontal-hours-after .left-hour-after {
-        width: 10px; }
-      .container .clock-face .horizontal-hours-after .right-hour-after {
-        width: 10px; }
+      left: 3px; }
+      .container .clock-face .horizontal-hours::before {
+        content: "";
+        display: block;
+        transform: rotate(-30deg);
+        border-left: 10px solid #bf9b30;
+        border-right: 10px solid #bf9b30;
+        top: 0;
+        left: -20px; }
+      .container .clock-face .horizontal-hours::after {
+        content: "";
+        display: block;
+        transform: rotate(30deg);
+        border-left: 10px solid #bf9b30;
+        border-right: 10px solid #bf9b30;
+        top: 0;
+        left: -20px; }
     .container .clock-face .date {
       width: 160px;
       height: 30px;
       position: absolute;
       bottom: 50px;
       left: 70px;
-      border: 2px groove #eee;
-      color: #fff; }
+      border: 2px groove #bf9b30;
+      color: #a67c20; }
       .container .clock-face .date #date {
         line-height: 30px;
         text-align: center;
         font-size: 16px;
-        font-family: "Lato", sans-serif; }
+        font-family: "Lato", sans-serif;
+        text-shadow: 0 0 2px #fff; }
 
 /*# sourceMappingURL=style.css.map */

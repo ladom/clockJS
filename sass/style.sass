@@ -51,8 +51,6 @@ $lato: 'Lato', sans-serif
 				bottom: -14px
 				left: -12px
 				border: 4px outset $second-hand
-				
-
 
 		.minute-hand
 			height: 125px
@@ -80,98 +78,64 @@ $lato: 'Lato', sans-serif
 				background-color: $hour-hand
 
 		.vertical-hours
+			box-sizing: border-box
 			width: 4px
-			height: 300px
+			height: 294px
+			border-top: 20px solid #bf9b30
+			border-bottom: 20px solid #bf9b30
 			position: absolute
-			top: 0
+			top: 3px
 			left: 148px
 
-			.top-hour
-				width: 4px
-				height: 20px
-				position: absolute
-				top: 3px
-				background-color: $hours
+			&::before
+				content: ""
+				display: block
+				@extend .vertical-hours
+				transform: rotate(-30deg)
+				border-top: 10px solid #bf9b30
+				border-bottom: 10px solid #bf9b30
+				top: -20px
+				left: 0
 
-			.bottom-hour
-				width: 4px
-				height: 20px
-				position: absolute
-				bottom: 3px
-				background-color: $hours
-
-		.vertical-hours-before
-			@extend .vertical-hours
-			transform: rotate(-30deg)
-			
-			.top-hour-before
-				@extend .top-hour
-				height: 10px
-				
-
-			.bottom-hour-before
-				@extend .bottom-hour
-				height: 10px
-
-		.vertical-hours-after
-			@extend .vertical-hours
-			transform: rotate(30deg)
-			
-			.top-hour-after
-				@extend .top-hour
-				height: 10px
-				
-
-			.bottom-hour-after
-				@extend .bottom-hour
-				height: 10px
+			&::after
+				content: ""
+				display: block
+				@extend .vertical-hours
+				transform: rotate(30deg)
+				border-top: 10px solid #bf9b30
+				border-bottom: 10px solid #bf9b30
+				top: -20px
+				left: 0
 
 		.horizontal-hours
-			width: 300px
+			box-sizing: border-box
+			width: 294px
 			height: 4px
+			border-left: 20px solid #bf9b30
+			border-right: 20px solid #bf9b30
 			position: absolute
 			top: 148px
-			left: 0px
+			left: 3px
 
-			.left-hour
-				width: 20px
-				height: 4px
-				position: absolute
-				left: 3px
-				background-color: $hours
+			&::before
+				content: ""
+				display: block
+				@extend .horizontal-hours
+				transform: rotate(-30deg)
+				border-left: 10px solid #bf9b30
+				border-right: 10px solid #bf9b30
+				top: 0
+				left: -20px
 
-			.right-hour
-				width: 20px
-				height: 4px
-				position: absolute
-				right: 3px
-				background-color: $hours
-
-		.horizontal-hours-before
-			@extend .horizontal-hours
-			transform: rotate(-30deg)
-			
-			.left-hour-before
-				@extend .left-hour
-				width: 10px
-				
-
-			.right-hour-before
-				@extend .right-hour
-				width: 10px
-
-		.horizontal-hours-after
-			@extend .horizontal-hours
-			transform: rotate(30deg)
-			
-			.left-hour-after
-				@extend .left-hour
-				width: 10px
-				
-
-			.right-hour-after
-				@extend .right-hour
-				width: 10px
+			&::after
+				content: ""
+				display: block
+				@extend .horizontal-hours
+				transform: rotate(30deg)
+				border-left: 10px solid #bf9b30
+				border-right: 10px solid #bf9b30
+				top: 0
+				left: -20px
 
 		.date
 			width: 160px
@@ -179,12 +143,12 @@ $lato: 'Lato', sans-serif
 			position: absolute
 			bottom: 50px
 			left: 70px
-			border: 2px groove #eee
-			color: #fff
+			border: 2px groove #bf9b30
+			color: $hour-hand
 
 			#date
 				line-height: 30px
 				text-align: center
 				font-size: 16px
 				font-family: $lato
-	
+				text-shadow: 0 0 2px #fff
